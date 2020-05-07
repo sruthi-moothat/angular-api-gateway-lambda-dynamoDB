@@ -1,0 +1,11 @@
+HTTP/2 200
+date: Mon, 04 May 2020 02:54:28 GMT
+content-type: application/json
+content-length: 30
+x-amzn-requestid: 82c425af-ec93-4168-8067-c56372bef358
+access-control-allow-origin: *
+access-control-allow-headers: Content-Type,X-Amz-Date,Authorization,X-Api-Key,x-requested-with
+x-amz-apigw-id: L_GLpG6hoAMF_Mw=
+x-custom-header: my custom header value
+x-amzn-trace-id: Root=1-5eaf83e4-e196c717e3e543dd204fafe6;Sampled=0
+access-control-allow-credentials: true

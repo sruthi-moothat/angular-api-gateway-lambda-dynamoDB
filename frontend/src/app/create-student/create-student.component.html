@@ -1,0 +1,172 @@
+<h2>SURVEY FORM</h2>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()" autocomplete="on">
+
+    <div class="row">
+          <div class="col-25">
+            <label for="id">Student ID</label>
+          </div>
+          <div class="col-75">
+            <input type="text" class="form-control" id="id" required [(ngModel)]="student.id" name="id" #id="ngModel">
+        </div>
+        <div *ngIf="id.invalid && (id.dirty || id.touched)"
+    class="alert alert-danger">
+
+  <div *ngIf="id.errors.required">
+    Name is required.
+  </div>
+  </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+          <label for="name">First Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" class="form-control" id="firstName" required [(ngModel)]="student.firstName" name="firstName">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="lastName">Last Name</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control" id="lastName" required [(ngModel)]="student.lastName" name="lastName">
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="address">address</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control" id="address" required [(ngModel)]="student.address" name="address">
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="city">city</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control" id="city" required [(ngModel)]="student.city" name="city">
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="state">state</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control" id="state" required [(ngModel)]="student.state" name="state">
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="zip">zip</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control" id="zip" required [(ngModel)]="student.zip" name="zip">
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="tel">telephone number</label>
+          </div>
+        <div class="col-75">
+            <input type="text" class="form-control" id="tel" required [(ngModel)]="student.tel" name="tel">
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="emailId">emailId</label>
+          </div>
+        <div class="col-75">
+            <input type="email" class="form-control" id="emailId" required [(ngModel)]="student.emailId" name="emailId">
+          </div>
+    </div>
+
+    <div class="row">
+        <div class="col-25">
+            <label for="sdate">Submission date</label>
+          </div>
+        <div class="col-75">
+            <input type="date" class="form-control" id="sdate" required [(ngModel)]="student.sdate" name="sdate">
+          </div>
+    </div>
+ 
+      <div class="mb-3">
+        <label>Things You Liked about this university</label>
+        
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="thingsliked"
+       value="student" id="defaultCheck1" (change)="onCheckboxChange($event, 'Students')">
+        <label class="form-check-label">Students </label>
+        </div>
+
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="thingsliked"
+       value="location" id="defaultCheck1" (change)="onCheckboxChange($event, 'Location')">
+       <label class="form-check-label">Location
+        </label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox"name="thingsliked"
+       value="campus" id="defaultCheck1" (change)="onCheckboxChange($event, 'Campus')">
+        <label class="form-check-label">Campus</label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="thingsliked"
+       value="atmosphere "id="defaultCheck1" (change)="onCheckboxChange($event, 'Atmosphere')">
+        <label class="form-check-label">Atmosphere</label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="thingsliked" value="dorm room" id="defaultCheck1" 
+        (change)="onCheckboxChange($event, 'Dorm Rooms')">
+        <label class="form-check-label">Dorm Rooms</label>
+        </div>
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="thingsliked"
+       value="sports" id="defaultCheck1" (change)="onCheckboxChange($event, 'Sports')">
+        <label class="form-check-label">Sports</label>
+        </div>
+        </div>
+
+    <div class="mb-3">
+        <label>How did you become interest in this university</label>
+        <div class="radio">
+        <label><input type="radio" id="interest" name="interest" value="Friends" [(ngModel)]="student.interest">Friends</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" id="interest" name="interest" value="Television" [(ngModel)]="student.interest">Television</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" id="interest" name="interest" value="Internet" [(ngModel)]="student.interest">Internet</label>
+        </div>
+        <div class="radio">
+        <label><input type="radio" id="interest" name="interest" value="Other" [(ngModel)]="student.interest">Other</label>
+        </div>
+    </div>
+    
+    <div class="row">
+    <label for="month">likelihood of recommendation</label>
+    <select class="form-control" id="recommend" [(ngModel)]="student.recommend" name ="recommend" >
+    <option value="Very Likely">Very Likely</option>
+    <option value="Likely">Likely</option>
+    <option value="Unlikely">Unlikely</option>
+     </select>
+    </div>
+     
+    <div class="row">
+        <input type="submit" value="Submit"> <span> .. </span>
+        <input type="button" value="Cancel">
+    </div>
+</form>
+</div>
+<div [hidden]="!submitted">
+  <h4>form is submitted successfully</h4>
+</div>
